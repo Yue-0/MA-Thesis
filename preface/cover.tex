@@ -1,0 +1,43 @@
+% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+
+\cdegree{硕~~士~~学~~位~~论~~文}
+\ctitle{多平台机器人高效自主跟踪轨迹规划方法研究}
+\etitle{Efficient Trajectory Planning for Autonomous Tracking on \\ Multi-Platform Robots}
+
+% 根据需要添加字符间距
+\cauthor{{\quad\;}~~~~~~~~~~~~~林跃}
+\cauthorno{{\quad\;}~~~~~~~~~~22309066}
+\csupervisor{{\quad\;}~~~~~~~~卢湖川~~教授 }
+\csubject{{\quad\;}~~~~信息与通信工程}
+
+% 这里默认使用最后编译的时间，也可自行给定日期，注意汉字和数字之间的空格。
+% \cdate{{\quad\;}~~~\the\year~年~\the\month~月~\the\day~日}
+\cdate{{\quad\;}~~~2026~年~5~月~31~日}
+
+\cabstract{
+    % 针对目标跟踪任务中机器人轨迹规划面临的实时性与适应性挑战，本文提出了一系列面向多平台机器人的高效自主跟踪轨迹规划方法。研究构建了以实时轨迹规划为核心，轻量化感知与高精度定位为支撑的技术框架。
+
+    % 在感知层面，设计了基于Transformer的轻量化视觉单目标跟踪模型，为后续模块稳定提供实时目标状态信息。在轨迹预测层面，设计了轻量化的运动意图预测网络，结合Bézier曲线实现具有运动意图感知能力的高精度实时轨迹预测。本文的核心贡献在于提出了一套普适的跨平台轨迹规划方法论：面向全向移动机器人，提出基于MINCO轨迹、支持时空联合优化的实时轨迹规划方法，有效平衡跟踪精度与避障要求；针对四旋翼无人机，创新性地提出无需更新的FoV-ESDF方法，显著缓解三维空间规划的计算瓶颈；对于四足机器狗，建立基于可视性感知的模型预测控制框架，增强其在复杂地面环境下的跟踪鲁棒性；在多机协同场景下，提出分布式轨迹规划方法与协作机制，确保多智能体精准跟踪及围捕目标的实现。此外，通过融合轨迹规划信息与环境特征匹配，设计了定位增强模块，在跟踪过程中有效抑制了位姿估计中的漂移问题。
+
+    % 所提方法在多类机器人平台上完成了系统性验证：全向移动机器人成功实现动态环境下的安全稳定跟踪；四旋翼无人机达成单次规划计算时间仅需10ms的实时性能；四足机器狗在复杂地面环境中展现出持续可靠的跟踪能力；多机器人系统在开放环境下实现了目标的精准围捕。相关研究成果已形成2篇IROS录用论文及1篇ICRA在投论文，并依托国家自然科学基金委重大项目及校企合作项目实现了技术落地应用。
+
+    % 本研究为异构机器人平台提供了鲁棒的自主跟踪解决方案，其方法论可扩展应用于智能拍摄、安防巡检等动态任务场景。未来工作将探索单机器人多目标跟踪的规划范式，并深化不确定性环境中的鲁棒决策机制研究。
+}
+
+
+\ckeywords{自主跟踪；多平台机器人；轨迹规划}
+
+\eabstract{
+    % To address the challenges of real-time processing and adaptability in trajectory planning for autonomous target tracking, we propose a series of efficient trajectory planning methods for multi-platform robotic systems. In this study, we establish a technical framework focused on real-time trajectory planning, supported by lightweight perception and high-precision localization.
+
+    % In the perception module, we design a lightweight, Transformer-based visual single-object tracking model to stably provide real-time target state inputs for subsequent modules. In the trajectory prediction module, we develop a target motion representation network based on Bézier curves to achieve high-precision, real-time trajectory predictions. The core contribution of this study is a universal, cross-platform trajectory planning methodology. For omnidirectional mobile robots, we propose a MINCO trajectory-based planner that supports spatiotemporal joint optimization to effectively balance tracking accuracy and obstacle avoidance safety. For quadrotor UAVs, we present an innovative update-free FoV-ESDF method to significantly alleviate computational bottlenecks in 3D space planning. For differential-driven robots, we establish a visibility-aware model predictive control framework to solve the singularity problems of traditional methods and enhance tracking robustness on complex terrain. In multi-robot collaboration scenarios, we propose a distributed trajectory planning method and cooperation mechanism to ensure precise target tracking and encirclement. Additionally, by fusing trajectory planning with environmental feature matching, we design a localization enhancement module to effectively suppress pose estimation drift during tracking.
+
+    % The proposed methods were systematically validated across multiple robotic platforms. Omnidirectional robots achieved safe and stable tracking in dynamic environments. Quadrotors attained real-time planning with only 10ms per computation. Differential-driven robots demonstrated persistent tracking capabilities on complex terrain. The multi-robot system successfully executed precise target encirclement in open environments. %Related results have been published in two IROS papers and one ICRA submission, with technical implementation supported by the Major Program of the National Natural Science Foundation of China and collaborative projects between industry and academia.
+
+    % In this study, we present a robust autonomous tracking solution for heterogeneous robotic platforms, with a methodology that can be extended to dynamic scenarios such as intelligent filming and security patrols. Future research will investigate planning paradigms for single-robot, multi-target tracking and enhance robust decision-making mechanisms in uncertain environments.
+}
+
+\ekeywords{Autonomous Tracking; Multi-Platform Robots; Trajectory Planning}
+
+\makecover 

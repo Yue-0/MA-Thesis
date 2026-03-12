@@ -1,0 +1,284 @@
+﻿% !TEX TS-program = XeLaTeX
+% !TEX encoding = UTF-8 Unicode
+
+\chapter{常用的结构}
+\label{chap02}
+\section{字体}
+\textbf{加粗}
+\emph{斜体}
+
+\section{列表}
+介绍一些列表
+\subsection{有序列表}
+\begin{enumerate}
+    \item xx。
+    \item xx。
+    \item xx。
+\end{enumerate}
+\subsection{无序列表}
+\begin{itemize}
+    \item xx。
+    \item xx。
+    \item xx。
+\end{itemize}
+
+
+% \section{图片}
+% 图片要放入到 “figures”文件中，图片生成最好是用pdf格式（这样出来的图片中，文字是可以被选中的）
+
+% \subsection{图片普通引用}
+
+% 如图\ref{fig:image1}所示，
+
+% 其中[htbp]是调图片出现的位置，感叹号可以强制固定位置，具体的细节可以上网查询;
+
+% $\backslash$centering 是调图片的位置(这里是居中); 
+
+% $\backslash$includegraphics[scale=0.15]\{a-realtemplate.pdf\}中，scale是调图片大小，后面的a-realtemplate.pdf则是图片所在文件的名字（在figures文件夹中）;
+
+% $\backslash$bicaption[fig:image1]\{单张图片\}\{单张图片\}\{Fig.\}\{One Images\}中，fig:image1是用来引用本图片的标签，想要引用的时候，只需要$\backslash$ref\{fig:image1\}就可以了，后面的则是图片的图片介绍以及中文说明和英文说明。
+
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[scale=0.15]{a-realtemplate.pdf}
+%   \bicaption[fig:image1]{单张图片}{单张图片}{Fig.}{One Images}
+% \end{figure}
+
+% \subsection{多张图片引用}
+% 如图\ref{fig:multi-images2}
+% \begin{figure}[t!]
+%   \centering
+%   \includegraphics[width=0.2\linewidth]{a-realtemplate.pdf}
+%   \includegraphics[width=0.2\linewidth]{b-computed-sparsity-template.pdf}
+%   \includegraphics[width=0.2\linewidth]{c-real_template_without_template.pdf}
+%   \bicaption[fig:multi-images2]{RealTemplate}{多张图片}{Fig.}{Multiple Images}
+% \end{figure}
+
+
+\section{表格}
+\subsection{简单表格}
+如表\ref{tab:datasets}所示。
+
+\begin{table}[htbp]
+  \bicaption[tab:datasets]{表}{数据集概览}{Tab.}{Summary of Datasets}
+  \centering
+  \vspace{0.2cm}
+  \zhongwu
+  \begin{tabular}{lcccccc}
+  \toprule
+  数据集 & 样本数量 & 记录数量 & 特征数量 & 平均记录数量 & 类别数 & $p/r$\\
+  \midrule
+  PPMI & 683 & 15798 & 212 & 23.1303 & 2 & 9/1 \\
+  PS & 68 & 1208 & 26 & 17.7647 & 2 & 1.5/1 \\
+  OD & 115 & 20560 & 5 & 178.7826 & 2 & 1/36 \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{复杂表格}
+如表\ref{tab:Time}所示。
+
+\begin{table*}[htbp]
+  \bicaption[tab:Time]{表}{运行时间比较（秒）}{Tab.}{Comparisons of Running Time (in seconds)}
+  \centering
+  \vspace{0.2cm}
+  \zhongwu
+  \scalebox{0.85}[0.85]{
+  \begin{tabular}{llcccccccccc}
+  \toprule
+  \multirow{2}{*}{Stage} & \multirow{2}{*}{Method} & \multicolumn{10}{c}{Number of Features} \\
+  \cline{3-12}
+   & & 20 & 40 & 60 & 80 & 100 & 120 & 140 & 160 & 180 & 200\\
+  \midrule
+  \multirow{7}{*}{Predicting} & PCC & 0.01 & 0.01 & 0.01 & 0.01 & 0.02 & 0.02 & 0.03 & 0.05 & 0.03 & 0.04 \\
+  & PCC+Fisher & 0.02 & 0.01 & 0.02 & 0.01 & 0.03 & 0.04 & 0.02 & 0.04 & 0.05 & 0.06 \\
+  & SR-C & 0.56 & 0.91 & 1.57 & 2.75 & 3.96 & 7.55 & 10.02 & 11.73 & 15.75 & 18.7\\
+  & PINV & 0.03 & 0.02 & 0.02 & 0.06 & 0.05 & 0.07 & 0.08 & 0.09 & 0.08 & 0.10 \\
+  & SR-PC & 1.51 & 1.52 & 1.54 & 1.56 & 1.64 & 1.64 & 1.77 & 1.77 & 2.01 & 1.83 \\
+  & Reweight-L1 & 0.25 & 0.52 & 0.75 & 1.17 & 1.51 & 1.64 & 2.11 & 2.78 & 3.69 & 4.51 \\
+  & SAR-noLC & 0.08 & 0.23 & 0.35 & 0.49 & 0.59 & 0.80 & 0.83 & 0.85 & 1.25 & 2.27 \\
+  & \cellcolor[rgb]{.7,.8,.9}MNR & \cellcolor[rgb]{.7,.8,.9}34.96 & \cellcolor[rgb]{.7,.8,.9}110.05 & \cellcolor[rgb]{.7,.8,.9}208.64 & \cellcolor[rgb]{.7,.8,.9}331.16 & \cellcolor[rgb]{.7,.8,.9}541.52 & \cellcolor[rgb]{.7,.8,.9}762.71 & \cellcolor[rgb]{.7,.8,.9}1076.53 & \cellcolor[rgb]{.7,.8,.9}1373.08 & \cellcolor[rgb]{.7,.8,.9}1772.22 & \cellcolor[rgb]{.7,.8,.9}2078.27 \\
+  & \cellcolor[rgb]{1,.9,.6}SAR & \cellcolor[rgb]{1,.9,.6}0.15 & \cellcolor[rgb]{1,.9,.6}0.25 & \cellcolor[rgb]{1,.9,.6}0.49 & \cellcolor[rgb]{1,.9,.6}0.36 & \cellcolor[rgb]{1,.9,.6}0.70 & \cellcolor[rgb]{1,.9,.6}0.94 & \cellcolor[rgb]{1,.9,.6}1.14 & \cellcolor[rgb]{1,.9,.6}1.12 & \cellcolor[rgb]{1,.9,.6}1.61 & \cellcolor[rgb]{1,.9,.6}2.48 \\
+  \midrule
+  \multirow{7}{*}{Training} & PCC & 0.35 & 0.55 & 1.28 & 1.80 & 3.58 & 6.31 & 8.90 & 13.16 & 17.17 & 18.45 \\
+  & PCC+Fisher & 0.57 & 0.74 & 1.64 & 1.99 & 4.65 & 7.77 & 10.58 & 13.71 & 18.6 & 23.00 \\
+  & SR-C & 3.07 & 11.33 & 19.57 & 33.7 & 50.29 & 109.33 & 146.78 & 215.24 & 222.99 & 248.01\\
+  & PINV & 0.86 & 1.49 & 2.16 & 3.12 & 5.52 & 10.76 & 14.35 & 19.67 & 21.05 & 31.04\\
+  & SR-PC & 14.77 & 10.72 & 13.27 & 16.47 & 21.64 & 27.51 & 33.53 & 38.52 & 47.09 & 51.69 \\
+  & Reweight-L1 & 22.51 & 46.2 & 72.66 & 97.85 & 133.67 & 174.79 & 230.62 & 297.64 & 338.53 & 396.27 \\
+  & SAR-noLC & 1.94 & 4.36 & 9.08 & 15.84 & 32.66 & 44.11 & 61.08 & 73.58 & 99.66 & 120.44 \\
+  & \cellcolor[rgb]{.7,.8,.9}MNR & \cellcolor[rgb]{.7,.8,.9}7.80 & \cellcolor[rgb]{.7,.8,.9}22.06 & \cellcolor[rgb]{.7,.8,.9}43.65 & \cellcolor[rgb]{.7,.8,.9}68.19 & \cellcolor[rgb]{.7,.8,.9}109.42 & \cellcolor[rgb]{.7,.8,.9}159.80 & \cellcolor[rgb]{.7,.8,.9}220.61 & \cellcolor[rgb]{.7,.8,.9}285.08 & \cellcolor[rgb]{.7,.8,.9}369.83 & \cellcolor[rgb]{.7,.8,.9}426.79 \\
+  & \cellcolor[rgb]{1,.9,.6}SAR & \cellcolor[rgb]{1,.9,.6}3.55 & \cellcolor[rgb]{1,.9,.6}6.95 & \cellcolor[rgb]{1,.9,.6}12.76 & \cellcolor[rgb]{1,.9,.6}21.33 & \cellcolor[rgb]{1,.9,.6}43.43 & \cellcolor[rgb]{1,.9,.6}56.08 & \cellcolor[rgb]{1,.9,.6}83.05 & \cellcolor[rgb]{1,.9,.6}100.66 & \cellcolor[rgb]{1,.9,.6}137.93 & \cellcolor[rgb]{1,.9,.6}162.27 \\
+  \bottomrule
+  \end{tabular}}
+\end{table*}
+
+
+\section{文献引用}
+我们的文献需要以BibTeX的格式放入到”body“文件夹中的"reference.bib"文件中。具体大家可以去看一下这个文件就明白了。对应的BibTeX格式大多数的文献管理网站和系统都能获取。
+例如：\\
+@inproceedings\{vaswani2017attention,\\
+  title=\{Attention is all you need\},\\
+  author=\{Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, \{\L\}ukasz and Polosukhin, Illia\},\\
+  booktitle=\{Advances in neural information processing systems\},\\
+  pages=\{5998--6008\},\\
+  year=\{2017\}\\
+\}
+
+其中第一行的vaswani2017attention，就是该文献的引用标签，只需要使用$\backslash$cite\{vaswani2017attention\}就可以引用本文献，效果如下：
+Transformer\cite{vaswani2017attention}。
+
+当然也可以同时引用多篇文献，只需要$\backslash$cite\{label1, label2\}，效果如下：自适应LASSO\cite{leng2006note,meinshausen2006high}。
+
+
+\section{公式}
+下面介绍公式：
+\subsection{行内式}
+行内式就是在段落中的公式，用\$y=f(x)\$即可，例如：
+
+有样本$X\in \mathbb{R}^{T_n\times P}$的$P$个特征都满足中心性（centered）和标准化性（normalized），即$X^T_{*i}X_{*i}=1$，$i=1,2,\cdots,P$。
+
+\subsection{行外式}
+行内式就是单独在外的公式，例如：
+\begin{equation}
+  \centering
+  \label{e:PCC}
+  \beta^{(n)}_{ij}=PCC(X^{(n)}_{*i},X^{(n)}_{*j}) 
+\end{equation}
+
+其中“e:PCC”就是这个公式的标签，需要引用公式的时候，使用$\backslash$ref，例如:
+$\beta$的计算方法如公式\ref{e:PCC}所示。
+
+
+\subsection{多行行外式}
+当然，可以行外式可以多行，用aligned来使用，用$\backslash\backslash$来分行，用\&来对齐，如公式\ref{e:PCC2}所示
+\begin{equation}
+  \centering
+  \label{e:PCC2}
+  \begin{aligned}
+  \rho(x,y)&=PCC(x,y)\\
+  &=\frac{n\sum{x_iy_i-\sum{x_i}\sum{y_i}}}{\sqrt{n\sum{x^2_i}-(\sum{x_i})^2}\sqrt{n\sum{y^2_i}-(\sum{y_i})^2}}
+  \end{aligned}
+\end{equation}
+
+\subsection{多公式行外式}
+同上
+\begin{equation}
+\label{e:mfunction}
+\begin{aligned}
+  Accuracy & = \frac{TP+TN}{P+N}
+  \\
+  Precision & = \frac{TP}{TP+FP}
+  \\
+  Recall &= \frac{TP}{TP+FN}
+  \\
+  F1 &= \frac{2\times TP}{2\times TP + FP + FN}
+\end{aligned}
+\end{equation}
+
+更详细的可参考https://katex.org/docs/supported.html
+
+
+
+\section{算法流程图}
+对于算法，可以用algorithm来编写，例子如下：
+
+SAR算法的详细过程可见算法\ref{a:SAR detail}。
+\begin{algorithm}[htbp]
+    \caption{Shared Adaptive Regularization（SAR）算法详细过程}
+    \label{a:SAR detail}
+    \begin{algorithmic}[1]
+    \State 设置步长$0<\eta\leq 1$，以及步长的步长$0<d<1$。（实际我们使用的是$\eta=1$，$d=\frac{1}{2}$）
+    \State 初始化连通网络$\beta^{(n)}(0)$，$\forall n$，让其值的分布为标准正态分布。
+    \State 根据公式\ref{e:PCC}或公式xx，利用$\beta(0)$计算初始模板$w(0)$。
+    \State 根据公式xx，通过数据集计算出$L$矩阵。
+    \State 根据公式xx，通过数据以及$L$矩阵，计算出$Q^{(n)}$及$c^{(n)}$，$\forall n$
+    \For{$t=1,2,\cdots,T$}
+        \While{1} 
+
+        \State 根据$\beta(t-1)$和$w(t-1)$得到$B(t-1)$，然后拉成向量$\vec{B}(t-1)$。
+        \State $z=prox_{\eta,h}\left( \vec{B}(t-1)- \nabla J(\vec{B}(t-1))\right)$
+        \State $\hat{J}=J\left(\vec{B}(t-1)\right)+\nabla J\left( \vec{B}(t-1)\right)^T\left(z-\vec{B}(t-1)\right)+\frac{1}{2\eta}\|z-\vec{B}(t-1)\|_2^2$
+        \If{$J(z)\leq\hat{J}$}
+        \State break
+        \EndIf
+        \State $\eta=d\times \eta$
+        \EndWhile
+    \State $\vec{B}(t)=z$
+    \State 根据$\vec{B}(t)$得到$B(t)$
+    \State 根据$B(t)$和$w(t-1)$计算出$\beta(t)$
+    \State 根据公式xx，利用$\beta(t)$计算模板$w(t)$。
+    \EndFor
+    \State \Return{稀疏连通网络$\beta(T)$和共享正则模板$w(T)$。}
+    \end{algorithmic}
+  \end{algorithm}
+
+另一种写法，可参照算法\ref{a:Re-weighted}。
+\begin{algorithm}
+  \caption{迭代求解Reweight-L1算法}
+  \label{a:Re-weighted}
+  \begin{algorithmic}[1] %每行显示行号
+    \Require 初始权重值$\lambda_{ij}^{(n)}(0)=1$，$\forall i,j$，$n=1,2,\cdots,N$，其中$\lambda^{(n)}\in\mathbb{R}^{P \times P}$;数据集$\{X^{(n)}\} : n=1,\cdots,N\}$，其中$X^{(n)}\in\mathbb{R}^{T_n \times P}$；初始连通网络$\{\beta^{(n)}(0) : n=1,\cdots,N\}$，其中$\beta^{(n)}\in\mathbb{R}^{P \times P}$；
+    \Ensure 最终权重值$\lambda^{(n)}(l_{max})$；最终连通网络$\beta^{(n)}(l_{max})$；
+    \Function {$\rm Iterative~~Reweighting$}{$\lambda(0), X, \beta(0)$}
+      \State 令$l$代表迭代次数，最大迭代次数设置为$l_{max}$，
+      \While{迭代次数$l<l_{max}$}
+        \State 先求解公式\ref{e:reweighted_L1_1}，得到第$l$代$\beta^{(n)}$，$n=1,2,\cdots,N$：
+        \begin{equation}
+          \label{e:reweighted_L1_1}
+        \beta^{(n)}(l)=\underset{\beta^{(n)}}{\operatorname{argmin}}\frac{1}{2}\left\|X^{(n)}\beta^{(n)}(l-1)-X^{(n)}\right\|_F^2+\sum_{ij}\left|\lambda^{(n)}_{ij}(l-1)\beta^{(n)}_{ij}(l-1)\right|
+        \end{equation}
+        \State 接着用公式xx更新权重，得到第$l$代$\lambda^{(n)}$，$n=1,2,\cdots,N$：
+        \begin{equation}
+          \label{e:reweighted_L1_2}
+        \lambda^{(n)}_{ij}(l)=\frac{1}{|\beta_{ij}^{(n)}(l)|+\epsilon}
+        \end{equation}
+      \EndWhile
+      \State \Return $\lambda^{(n)}(l_{max}),\beta^{(n)}(l_{max})$，$n=1,2,\cdots,N$
+    \EndFunction
+  \end{algorithmic}
+\end{algorithm}
+
+\section{定理证明等自制结构}
+
+有的时候我们需要自制的结构，例如 \textbf{定理}，\textbf{证明}等
+
+可以去"setup"文件夹中，找到"format.tex"文件，在该文件中有”标题环境相关“这一段落，就可以改了，例如$\backslash$newtheorem\{proof\}\{$\backslash$hei 证明\}[chapter]，就添加了”证明“这一种结构（$\backslash$hei是指使用黑体），使用方法如下：
+
+对于定理1的证明，可见证明\ref{pr:1}：
+\begin{proof}
+  \label{pr:1}
+你的证明。
+\end{proof}
+
+\section{章节}
+\begin{itemize}
+    \item 对于章节，每个章节的内容放在了"body"文件夹中的对应文件。
+    \item 每一章，用$\backslash$chapter\{章的名字\}。
+    \item 每一节，用$\backslash$section\{节的名字\}。
+    \item 每一小节，用$\backslash$subsection\{小节的名字\}。
+    \item 每一小小节，用$\backslash$subsubsection\{小小节的名字\}，依次类推。
+    \item 如何想要引用某一章节，可以在对应章节的下面，加上$\backslash$label\{你定义的label\}，如：在第\ref{chap03}章中，第\ref{section03-01}节说到xxx。
+\end{itemize}
+
+\section{其它颜色字体}
+如果有人想要对论文进行修改和评论的时候，可以使用其它的颜色的字体，可以在”setup“文件夹中的”颜色"部分，新增一下命令：
+
+例如：
+
+张三:
+
+$\backslash$newcommand\{$\backslash$zhangsan\}[1]\{\{$\backslash$color\{red\}\#1\}\}
+
+王老五：
+
+$\backslash$newcommand\{$\backslash$wanglaowu\}[1]\{\{$\backslash$color\{blue\}\#1\}\}
+
+效果如下：
+
+\zhangsan{这一段我觉得写的不好，找个时间和老师商量一下}
+
+\wanglaowu{可以看一下这个资料}
+
+
+
